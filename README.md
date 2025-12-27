@@ -1,51 +1,62 @@
-```plaintext
-Wena-Tech-Auto-Reply-Bot/
-├── README.md
-├── .gitignore
-├── LICENSE
-├── package.json
-├── Procfile
-├── server.js
-├── /src
-│   ├── index.js
-│   ├── bot.js
-│   ├── responses.js
-│   ├── commands.js
-│   ├── handler.js
-│   └── sessionManager.js
-├── /config
-│   ├── env.js
-│   ├── settings.json
-│   └── credentials.js
-├── /routes
-│   ├── api.js
-│   ├── webhook.js
-│   └── auth.js
-├── /controllers
-│   ├── botController.js
-│   └── userController.js
-├── /middlewares
-│   ├── authMiddleware.js
-│   └── errorHandler.js
-├── /services
-│   ├── whatsappService.js
-│   ├── herokuService.js
-│   └── messageFormatter.js
-├── /models
-│   ├── userModel.js
-│   └── logModel.js
-├── /utils
-│   ├── logger.js
-│   ├── validator.js
-│   └── helper.js
-├── /database
-│   ├── connect.js
-│   └── schema.sql
-├── /public
-│   ├── logo.png
-│   ├── banner.txt
-│   └── styles.css
-└── /logs
-    ├── app.log
-    └── error.log
+
+
+---
+
+📁 GitHub Repo Structure:
 ```
+whatsapp-bot/
+├── .env
+├── index.js
+├── package.json
+```
+
+---
+
+📦 package.json
+```json
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "twilio": "^4.3.0",
+    "dotenv": "^16.0.3"
+  }
+}
+```
+
+---
+
+⚙️ .env (Keep secret)
+```
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_ACCOUNT_SID=your_account_sid
+```
+
+---
+
+🧠 index.js (Core Bot Logic)
+```js
+require('dotenv').config();
+const express = require('express');
+const { MessagingResponse } = require('twilio').twiml;
+
+const app = express();
+app.use(express.urlencoded({ extended: false }));
+
+app.post('/webhook', (req, res) => {
+  const twiml = new MessagingResponse();
+  const incomingMsg = req.body.Body || '';
+
+  let reply = 'Hello! This is Wena AutoBot.';
+  if (incomingMsg.toLowerCase().includes('hello')) {
+    reply = 'Hi there! How can I assist you today?';
+  } else if (incomingMsg.toLowerCase().includes('quote')) {
+    reply = '“Success is not final; failure is not fatal.”';
+  }
+
+  twiml.message(reply);
