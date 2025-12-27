@@ -1,39 +1,51 @@
-
-
-
-```markdown
-👋 Hi there, I'm </>WenaMD!
-
-🚀 Passionate about tech, automation & clean UI  
-💻 Developer at Wena Tech  
-📱 Building auto-reply systems, bots & smart tools  
-🌍 Based in Kenya  
-📧 Reach me: wernabruce@gmail.com
-
-🔧 Tech Stack  
-- ⚙️ Node.js | Express  
-- 🐍 Python | Flask  
-- ☁️ Heroku | Firebase  
-- 🧠 AI & Automation  
-- 🔌 APIs | Webhooks
-
-📌 Projects  
-- 🤖 Auto-reply WhatsApp Bot  
-- 🌐 Wena Tech Web Interface  
-- 🗳️ Poll & Feedback Systems
-
-🛠️ Currently Working On  
-- Integrating GitHub-Heroku workflows  
-- Expanding Wena Tech tools  
-- Learning ethical automation
-
----
-
-⭐️ *“Tech is only as smart as the builder behind it.”*  
+```plaintext
+Wena-Tech-Auto-Reply-Bot/
+├── README.md
+├── .gitignore
+├── LICENSE
+├── package.json
+├── Procfile
+├── server.js
+├── /src
+│   ├── index.js
+│   ├── bot.js
+│   ├── responses.js
+│   ├── commands.js
+│   ├── handler.js
+│   └── sessionManager.js
+├── /config
+│   ├── env.js
+│   ├── settings.json
+│   └── credentials.js
+├── /routes
+│   ├── api.js
+│   ├── webhook.js
+│   └── auth.js
+├── /controllers
+│   ├── botController.js
+│   └── userController.js
+├── /middlewares
+│   ├── authMiddleware.js
+│   └── errorHandler.js
+├── /services
+│   ├── whatsappService.js
+│   ├── herokuService.js
+│   └── messageFormatter.js
+├── /models
+│   ├── userModel.js
+│   └── logModel.js
+├── /utils
+│   ├── logger.js
+│   ├── validator.js
+│   └── helper.js
+├── /database
+│   ├── connect.js
+│   └── schema.sql
+├── /public
+│   ├── logo.png
+│   ├── banner.txt
+│   └── styles.css
+└── /logs
+    ├── app.log
+    └── error.log
 ```
-
-
-<!---
-bruce257/bruce257 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
