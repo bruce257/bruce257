@@ -2,7 +2,7 @@
 
 
 ```markdown
-👋 Hi there, I'm bruce257!
+👋 Hi there, I'm </>WenaMD!
 
 🚀 Passionate about tech, automation & clean UI  
 💻 Developer at Wena Tech  
