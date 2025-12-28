@@ -1,5 +1,4 @@
-https://readme-typing-svg.demolab.com/demo/?font=Rubic+gemstones+&color=F70202&multiline=true&lines=Welcome%F0%9F%98%8A+to+WenaXMD+powered+by+wena;Just+a+Star+on+my+repo
-
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Rubic+gemstones+&pause=1000&color=F70202&multiline=true&width=435&lines=Welcome%F0%9F%98%8A+to+WenaXMD+powered+by+wena;Just+a+Star+on+my+repo)](https://git.io/typing-svg)
 
 ---
 
