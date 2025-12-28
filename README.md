@@ -1,1 +1,1 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=FFD85600&width=435&lines=Welcome+%F0%9F%98%8A+to+wena+tech+)
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&background=FFD85600&width=435&lines=Welcome+%F0%9F%98%8A+to+wena+tech+)
