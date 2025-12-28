@@ -1,39 +1,63 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Arial+bold&size=30&pause=1000&background=D561FF00&multiline=true&width=435&lines=Welcome+%F0%9F%98%8A+to+WenaXMD...+just+a+Star+on+my+repo+Will+Make+my+day+;Print(%22Go+Hard+or+Go+Home%22);Go+Hard+or+Go+Home.)](https://git.io/typing-svg) ```javascript
-// messageCreate.js
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Arial+bold&size=30&pause=1000&background=D561FF00&multiline=true&width=435&lines=Welcome+%F0%9F%98%8A+to+WenaXMD...+just+a+Star+on+my+repo+Will+Make+my+day+;Print(%22Go+Hard+or+Go+Home%22);Go+Hard+or+Go+Home.)](https://git.io/typing-svg) 
 
-module.exports = {
-    name: 'messageCreate',
-    async execute(message) {
-        if (message.author.bot) return;
 
-        const menuMessage = `📁 *GiftedMD Project Structure*
-\`\`\`
-GiftedMD/
-├── commands/
-│   ├── fun/
-│   │   ├── joke.js
-│   │   └── meme.js
-│   ├── moderation/
-│   │   ├── ban.js
-│   │   └── kick.js
-│   └── utility/
-│       ├── ping.js
-│       └── uptime.js
-├── events/
-│   ├── ready.js
-│   └── messageCreate.js
-├── config.json
-├── index.js
-\`\`\`
+---
 
-📜 *Command Categories*
-- 🧩 Fun: \`!joke\`, \`!meme\`
-- 🛡️ Moderation: \`!ban\`, \`!kick\`
-- 🧰 Utility: \`!ping\`, \`!uptime\`
-
-Type \`!help <command>\` for more info.`;
-
-        message.channel.send(menuMessage);
-    },
-};
+📁 GitHub Repo Structure:
 ```
+whatsapp-bot/
+├── .env
+├── index.js
+├── package.json
+```
+
+---
+
+📦 package.json
+```json
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "twilio": "^4.3.0",
+    "dotenv": "^16.0.3"
+  }
+}
+```
+
+---
+
+⚙️ .env (Keep secret)
+```
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_ACCOUNT_SID=your_account_sid
+```
+
+---
+
+🧠 index.js (Core Bot Logic)
+```js
+require('dotenv').config();
+const express = require('express');
+const { MessagingResponse } = require('twilio').twiml;
+
+const app = express();
+app.use(express.urlencoded({ extended: false }));
+
+app.post('/webhook', (req, res) => {
+  const twiml = new MessagingResponse();
+  const incomingMsg = req.body.Body || '';
+
+  let reply = 'Hello! This is Wena AutoBot.';
+  if (incomingMsg.toLowerCase().includes('hello')) {
+    reply = 'Hi there! How can I assist you today?';
+  } else if (incomingMsg.toLowerCase().includes('quote')) {
+    reply = '“Success is not final; failure is not fatal.”';
+  }
+
+  twiml.message(reply);
